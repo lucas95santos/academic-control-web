@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// hooks
+import { usePersistedState } from './hooks';
+// routes
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
+// components
+import { Header } from './components';
+// styles
+import { ThemeProvider, DefaultTheme } from 'styled-components';
+import GlobalStyle from './styles/global';
+// themes
+import lightTheme from './styles/themes/light';
+import darkTheme from './styles/themes/dark';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App: React.FunctionComponent = () => {
+    const [theme, setTheme] = usePersistedState<DefaultTheme>('ac-theme-0.0.1', lightTheme);
+
+    function toogleTheme() {
+       setTheme(theme.title === 'ac-light-theme' ? darkTheme : lightTheme);
+    }
+
+    return (
+        <ThemeProvider theme={theme}>
+            <BrowserRouter>
+                <GlobalStyle />
+
+                <Header toogleTheme={toogleTheme} />
+                <Routes />
+            </BrowserRouter>
+        </ThemeProvider>
+    );
 }
 
 export default App;
