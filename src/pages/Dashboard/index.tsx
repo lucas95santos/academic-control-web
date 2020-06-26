@@ -29,8 +29,9 @@ const Dashboard: React.FunctionComponent = () => {
                     height={250}
                     margin={{ left: 0, right: 16 }}
                     image={booksSvg}
-                    animationName="ZoomIn"
-                    duration="2s"
+                    animationName="SlideInRight"
+                    duration="1.5s"
+                    delay="0.3s"
                 >
                     <CardTitle>Inteligência artificial</CardTitle>
                     <CardDivider />
