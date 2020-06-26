@@ -1,12 +1,26 @@
-import styled from 'styled-components';
+import styled, { Keyframes } from 'styled-components';
+// animations
+import BaseAnimation, {
+    SlideInLeft,
+    SlideInRight,
+    SlideInTop,
+    SlideInBottom,
+    ZoomIn
+} from '../../styles/animations';
 
 interface CardProps {
-    size: number;
+    width?: string;
     height: number;
     margin: {
         left: number;
         right: number;
-    }
+    };
+    image?: any;
+    animationName?: string;
+}
+
+interface CardMessageProps {
+    color: string;
 }
 
 export const Container = styled.div`
@@ -25,14 +39,110 @@ export const Section = styled.section`
     }
 `
 
-export const Card = styled.div`
-    width: calc(100% / ${(props: CardProps) => props.size} - 16px);
+function setAnimation(animationName: string): Keyframes {
+    switch (animationName) {
+        case 'SlideInLeft':
+            return SlideInLeft;
+        case 'SlideInRight':
+            return SlideInRight;
+        case 'SlideInTop':
+            return SlideInTop;
+        case 'SlideInBottom':
+            return SlideInBottom;
+        case 'ZoomIn':
+            return ZoomIn;
+        default:
+            return SlideInLeft;
+    }
+}
+
+export const Card = styled(BaseAnimation)`
+    position: relative;
+    min-width: 250px;
+    width: ${(props: CardProps) => props.width ? props.width : '250px'};
     height: ${(props: CardProps) => props.height}px;
     background: ${props => props.theme.colors.card};
     border-radius: 8px;
+    border-left: 8px solid ${props => props.theme.colors.primary};
+    padding: 16px;
     box-shadow: 0 2px 3px 0 #00000029;
     margin-left: ${(props: CardProps) => props.margin.left}px;
     margin-right: ${(props: CardProps) => props.margin.right}px;
+
+    background-image: url(${(props: CardProps) => props.image});
+    background-position: right bottom;
+    background-repeat: no-repeat;
+
+    animation-name: ${(props: CardProps) => props.animationName ? setAnimation(props.animationName) : ''};
+`
+
+export const CardTitle = styled.span`
+    font-family: var(--primary-font);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: ${props => props.theme.colors.secondary};
+    text-transform: uppercase;
+`
+
+export const CardDivider = styled.div`
+    width: 100%;
+    height: 1px;
+    background: ${props => props.theme.colors.default};
+`
+
+export const CardContent = styled.div`
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+`
+
+export const CardContentItem = styled.div`
+    flex: 1;
+
+    & p {
+        font-family: var(--primary-font);
+        font-size: 0.813rem;
+        font-weight: 400;
+        color: ${props => props.theme.colors.lightText};
+        text-transform: uppercase;
+    }
+
+    & span {
+        font-family: var(--primary-font);
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: ${props => props.theme.colors.secondary};
+        text-transform: uppercase;
+        margin-right: 8px;
+    }
+`
+
+export const CardMessage = styled.div`
+    position: absolute;
+    bottom: 96px;
+    right: 16px;
+
+    & span {
+        font-family: var(--primary-font);
+        font-size: 0.7rem;
+        line-height: 0.6rem;
+        color: ${(props: CardMessageProps) => props.color};
+        text-transform: none;
+    }
+`
+
+export const CardInfo = styled.div`
+    position: absolute;
+    width: 100px;
+    bottom: 16px;
+    left: 16px;
+
+    & span {
+        font-family: var(--primary-font);
+        font-size: 0.7rem;
+        line-height: 0.6rem;
+        color: ${props => props.theme.colors.lightText}
+    }
 `
 
 export const AddCard = styled(Card)`
