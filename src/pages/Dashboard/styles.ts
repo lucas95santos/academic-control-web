@@ -2,6 +2,7 @@ import styled, { Keyframes } from 'styled-components';
 // animations
 import BaseAnimation, {
     SlideInLeft,
+    SlideInLeftAlternative,
     SlideInRight,
     SlideInTop,
     SlideInBottom,
@@ -43,6 +44,8 @@ function setAnimation(animationName: string): Keyframes {
     switch (animationName) {
         case 'SlideInLeft':
             return SlideInLeft;
+        case 'SlideInLeftAlternative':
+            return SlideInLeftAlternative;
         case 'SlideInRight':
             return SlideInRight;
         case 'SlideInTop':
@@ -152,11 +155,12 @@ export const AddCard = styled(Card)`
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all linear 0.2s;
+
+    transition: transform linear 0.2s !important;
     cursor: pointer;
 
     &:hover {
-        transform: translateY(-10px);
+        transform: translateY(-5%) !important;
     }
 `
 

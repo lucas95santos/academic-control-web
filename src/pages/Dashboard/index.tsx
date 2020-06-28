@@ -59,7 +59,7 @@ const Dashboard: React.FunctionComponent = () => {
                     height={250}
                     margin={{ left: 16, right: 0 }}
                     title="Adicionar disciplina"
-                    animationName="SlideInLeft"
+                    animationName="SlideInLeftAlternative"
                     duration="1.5s"
                     delay="0.3s"
                 >
