@@ -1,4 +1,6 @@
 import React from 'react';
+// components
+import { Performing } from '../../components';
 // styles
 import {
     Container,
@@ -31,9 +33,39 @@ const Dashboard: React.FunctionComponent = () => {
                     image={booksSvg}
                     animationName="SlideInRight"
                     duration="1.5s"
+                    delay="0.6s"
+                >
+                    <CardTitle>IA - Inteligência artificial</CardTitle>
+                    <CardDivider />
+
+                    <CardContent>
+                        <CardContentItem>
+                            <p><span>p1: </span>10.0</p>
+                            <p><span>p2: </span>10.0</p>
+                            <p><span>po: </span>10.0</p>
+                            <p><span>tp: </span>10.0</p>
+                        </CardContentItem>
+                        <CardContentItem>
+                            <p><span>mf: </span>10.0</p>
+                            <CardMessage color={colors.success}>
+                                <span>Passou com folga.<br />Bom trabalho!</span>
+                            </CardMessage>
+                        </CardContentItem>
+                    </CardContent>
+
+                    <CardInfo>
+                        <span>A média para essa disciplina é 6.0</span>
+                    </CardInfo>
+                </Card>
+                <Card
+                    height={250}
+                    margin={{ left: 16, right: 16 }}
+                    image={booksSvg}
+                    animationName="SlideInRight"
+                    duration="1.5s"
                     delay="0.3s"
                 >
-                    <CardTitle>Inteligência artificial</CardTitle>
+                    <CardTitle>FUNDRED - Fundamentos de Redes</CardTitle>
                     <CardDivider />
 
                     <CardContent>
@@ -90,6 +122,7 @@ const Dashboard: React.FunctionComponent = () => {
                 >
                     <CardTitle>Desempenho</CardTitle>
                     <CardDivider />
+                    <Performing />
                 </Card>
             </Section>
         </Container>
