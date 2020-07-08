@@ -1,6 +1,6 @@
 import React from 'react';
 // components
-import { Performing } from '../../components';
+import { Performing, LastActions } from '../../components';
 // styles
 import {
     Container,
@@ -111,6 +111,7 @@ const Dashboard: React.FunctionComponent = () => {
                 >
                     <CardTitle>Últimas ações</CardTitle>
                     <CardDivider />
+                    <LastActions />
                 </Card>
                 <Card
                     width='100%'
