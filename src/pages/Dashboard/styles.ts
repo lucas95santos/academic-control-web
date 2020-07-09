@@ -175,6 +175,7 @@ export const CardInfo = styled.div`
 `
 
 export const AddClass = styled(BaseAnimation)`
+    min-width: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
