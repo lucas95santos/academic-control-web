@@ -13,8 +13,7 @@ import {
     CardContentItem,
     CardMessage,
     CardInfo,
-    AddCard,
-    AddCardCircle
+    AddClass
 } from './styles';
 import { ThemeContext } from 'styled-components';
 // icons
@@ -92,18 +91,14 @@ const Dashboard: React.FunctionComponent = () => {
                         </CardInfo>
                     </Card>
                 ))}
-                <AddCard
-                    width="20%"
-                    height={250}
+                <AddClass
                     animationName="SlideInLeft"
-                    isClass
                     duration="1.5s"
                     delay="1.5s"
                 >
-                    <AddCardCircle title="Adicionar disciplina">
-                        <FaPlus />
-                    </AddCardCircle>
-                </AddCard>
+                    <FaPlus />
+                    <span>Adicionar disciplina</span>
+                </AddClass>
             </Section>
             <Section>
                 <Card

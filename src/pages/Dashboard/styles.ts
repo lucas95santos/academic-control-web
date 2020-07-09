@@ -10,6 +10,10 @@ interface CardProps {
     isClass?: boolean;
 }
 
+interface AddClassProps {
+    animationName?: string;
+}
+
 interface CardMessageProps {
     color: string;
 }
@@ -143,7 +147,7 @@ export const CardMessage = styled.div`
     bottom: 96px;
     right: 16px;
 
-    & span {
+    > span {
         font-family: var(--primary-font);
         font-size: 0.813rem;
         line-height: 0.6rem;
@@ -162,7 +166,7 @@ export const CardInfo = styled.div`
     bottom: 16px;
     left: 16px;
 
-    & span {
+    > span {
         font-family: var(--primary-font);
         font-size: 0.7rem;
         line-height: 0.6rem;
@@ -170,34 +174,30 @@ export const CardInfo = styled.div`
     }
 `
 
-export const AddCard = styled(Card)`
-    background: transparent;
-    box-shadow: none;
-    border: 2px dashed ${props => props.theme.colors.primary};
+export const AddClass = styled(BaseAnimation)`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-`
-
-export const AddCardCircle = styled.div`
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    border: 2px dashed ${props => props.theme.colors.primary};
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    & svg {
-        font-size: 32px;
-        color: ${props => props.theme.colors.primary}
-    }
-
-    transition: transform linear 0.2s !important;
+    margin-left: calc(var(--gutter) / 2);
+    animation-name: ${(props: AddClassProps) => props.animationName ? setAnimation(props.animationName) : ''};
+    transition: all linear 0.2s !important;
     cursor: pointer;
 
+    > span {
+        font-family: var(--primary-font);
+        font-size: 1rem;
+        color: ${props => props.theme.colors.lightText};
+        margin-top: calc(var(--gutter) / 8);
+    }
+
+    > svg {
+        font-size: 1.6rem;
+        color: ${props => props.theme.colors.default}
+    }
+
+
     &:hover {
-        transform: scale(1.1) !important;
+        filter: brightness(80%);
     }
 `
