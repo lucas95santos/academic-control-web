@@ -187,13 +187,13 @@ export const AddClass = styled(BaseAnimation)`
     > span {
         font-family: var(--primary-font);
         font-size: 1rem;
-        color: ${props => props.theme.colors.lightText};
+        color: ${props => props.theme.colors.text};
         margin-top: calc(var(--gutter) / 8);
     }
 
     > svg {
         font-size: 1.6rem;
-        color: ${props => props.theme.colors.default}
+        color: ${props => props.theme.colors.text}
     }
 
 
