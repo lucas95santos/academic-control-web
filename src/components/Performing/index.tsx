@@ -39,8 +39,10 @@ const Performing: React.FunctionComponent = () => {
     return (
         <PerformingContainer id="performing_container">
             <PerformingOptions>
-                <PerformingButtonActive margin={{ left: 0, right: 8 }}>IA</PerformingButtonActive>
-                <PerformingButton margin={{ left: 8, right: 0 }}>FundRed</PerformingButton>
+                <PerformingButtonActive margin={{ left: 0, right: 8 }}>ia</PerformingButtonActive>
+                <PerformingButton margin={{ left: 8, right: 8 }}>fundred</PerformingButton>
+                <PerformingButton margin={{ left: 8, right: 8 }}>so</PerformingButton>
+                <PerformingButton margin={{ left: 8, right: 0 }}>medsoft</PerformingButton>
             </PerformingOptions>
             <LineChart
                 width={performingChartWidth}

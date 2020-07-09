@@ -4,6 +4,18 @@ export const TableContainer = styled.div`
     width: 100%;
     height: calc(100% - 24px);
     padding: 16px 0;
+    overflow: auto;
+
+    ::-webkit-scrollbar {
+        height: 6px;
+        background-color: ${props => props.theme.colors.default};
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: ${props => props.theme.colors.primary};
+        border-radius: 5px;
+    }
 `;
 
 export const Table = styled.table`

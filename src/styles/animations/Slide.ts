@@ -11,17 +11,6 @@ export const SlideInLeft = keyframes`
     }
 `
 
-export const SlideInLeftAlternative = keyframes`
-    from {
-        margin-left: 250px;
-        opacity: 0;
-    }
-    to {
-        margin-left: 16px;
-        opacity: 1;
-    }
-`
-
 export const SlideInRight = keyframes`
     from {
         transform: translateX(-100%);

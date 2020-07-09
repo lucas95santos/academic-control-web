@@ -9,6 +9,7 @@ import { ThemeContext } from 'styled-components';
 import { shade } from 'polished';
 // icons
 import { FaBell } from 'react-icons/fa';
+import { TiThMenu } from 'react-icons/ti';
 // images
 import notebookSvg from '../../assets/notebook.svg';
 import sunSvg from '../../assets/sun.svg';
@@ -54,6 +55,9 @@ const Header: React.FunctionComponent<Props> = (props) => {
         <header>
             <Nav>
                 <Brand image={notebookSvg} title="Academic Control" />
+
+                <TiThMenu id="menu-collapse" />
+
                 <NavOptions>
                     <FaBell />
 

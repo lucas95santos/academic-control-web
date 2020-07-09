@@ -41,6 +41,10 @@ export const PerformingButton = styled.button`
     margin-left: ${(props: PerformingButtonProps) => props.margin.left}px;
     margin-right: ${(props: PerformingButtonProps) => props.margin.right}px;
 
+    @media (max-width: 415px) {
+        font-size: 0.625rem;
+    }
+
     &:hover {
         background-color: ${props => props.theme.colors.primary};
         color: #ffffff;

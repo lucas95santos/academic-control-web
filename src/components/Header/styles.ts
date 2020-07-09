@@ -8,6 +8,27 @@ export const Nav = styled.nav`
     justify-content: space-between;
     align-items: center;
     font-family: var(--secondary-font);
+
+    & svg {
+        font-size: 1.4rem;
+        color: ${props => shade(0.15, props.theme.colors.default)};
+
+        cursor: pointer;
+        transition: all linear 0.2s;
+
+        &:hover {
+            color: ${props => shade(0.3, props.theme.colors.default)};
+        }
+    }
+
+    & svg#menu-collapse {
+        font-size: 1.8rem;
+        margin-left: var(--gutter);
+
+        @media (min-width: 601px) {
+            display: none;
+        }
+    }
 `
 
 export const Brand = styled.div`
@@ -33,16 +54,8 @@ export const NavOptions = styled.div`
     display: flex;
     align-items: center;
 
-    & svg {
-        font-size: 1.4rem;
-        color: ${props => shade(0.15, props.theme.colors.default)};
-
-        cursor: pointer;
-        transition: all linear 0.2s;
-
-        &:hover {
-            color: ${props => shade(0.3, props.theme.colors.default)};
-        }
+    @media (max-width: 600px) {
+        display: none;
     }
 `
 

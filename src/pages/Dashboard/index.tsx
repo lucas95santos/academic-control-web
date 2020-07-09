@@ -28,12 +28,13 @@ const Dashboard: React.FunctionComponent = () => {
         <Container>
             <Section>
                 <Card
+                    width="20%"
                     height={250}
-                    margin={{ left: 0, right: 16 }}
                     image={booksSvg}
                     animationName="SlideInRight"
+                    isClass
                     duration="1.5s"
-                    delay="0.6s"
+                    delay="1.2s"
                 >
                     <CardTitle>IA - Inteligência artificial</CardTitle>
                     <CardDivider />
@@ -58,14 +59,77 @@ const Dashboard: React.FunctionComponent = () => {
                     </CardInfo>
                 </Card>
                 <Card
+                    width="20%"
                     height={250}
-                    margin={{ left: 16, right: 16 }}
                     image={booksSvg}
                     animationName="SlideInRight"
+                    isClass
+                    duration="1.5s"
+                    delay="0.9s"
+                >
+                    <CardTitle>FUNDRED - Fund. de Redes</CardTitle>
+                    <CardDivider />
+
+                    <CardContent>
+                        <CardContentItem>
+                            <p><span>p1: </span>10.0</p>
+                            <p><span>p2: </span>10.0</p>
+                            <p><span>po: </span>10.0</p>
+                            <p><span>tp: </span>10.0</p>
+                        </CardContentItem>
+                        <CardContentItem>
+                            <p><span>mf: </span>10.0</p>
+                            <CardMessage color={colors.success}>
+                                <span>Passou com folga.<br />Bom trabalho!</span>
+                            </CardMessage>
+                        </CardContentItem>
+                    </CardContent>
+
+                    <CardInfo>
+                        <span>A média para essa disciplina é 6.0</span>
+                    </CardInfo>
+                </Card>
+                <Card
+                    width="20%"
+                    height={250}
+                    image={booksSvg}
+                    animationName="SlideInRight"
+                    isClass
+                    duration="1.5s"
+                    delay="0.6s"
+                >
+                    <CardTitle>SO - Sistemas Operacionais</CardTitle>
+                    <CardDivider />
+
+                    <CardContent>
+                        <CardContentItem>
+                            <p><span>p1: </span>10.0</p>
+                            <p><span>p2: </span>10.0</p>
+                            <p><span>po: </span>10.0</p>
+                            <p><span>tp: </span>10.0</p>
+                        </CardContentItem>
+                        <CardContentItem>
+                            <p><span>mf: </span>10.0</p>
+                            <CardMessage color={colors.success}>
+                                <span>Passou com folga.<br />Bom trabalho!</span>
+                            </CardMessage>
+                        </CardContentItem>
+                    </CardContent>
+
+                    <CardInfo>
+                        <span>A média para essa disciplina é 6.0</span>
+                    </CardInfo>
+                </Card>
+                <Card
+                    width="20%"
+                    height={250}
+                    image={booksSvg}
+                    animationName="SlideInRight"
+                    isClass
                     duration="1.5s"
                     delay="0.3s"
                 >
-                    <CardTitle>FUNDRED - Fundamentos de Redes</CardTitle>
+                    <CardTitle>MEDSOFT - Medição de Software</CardTitle>
                     <CardDivider />
 
                     <CardContent>
@@ -88,23 +152,22 @@ const Dashboard: React.FunctionComponent = () => {
                     </CardInfo>
                 </Card>
                 <AddCard
+                    width="20%"
                     height={250}
-                    margin={{ left: 16, right: 0 }}
-                    title="Adicionar disciplina"
-                    animationName="SlideInLeftAlternative"
+                    animationName="SlideInLeft"
+                    isClass
                     duration="1.5s"
                     delay="0.3s"
                 >
-                    <AddCardCircle>
+                    <AddCardCircle title="Adicionar disciplina">
                         <FaPlus />
                     </AddCardCircle>
                 </AddCard>
             </Section>
             <Section>
                 <Card
-                    width='100%'
+                    width='50%'
                     height={300}
-                    margin={{ left: 0, right: 16 }}
                     animationName="SlideInBottom"
                     duration="1.5s"
                     delay="1s"
@@ -114,9 +177,8 @@ const Dashboard: React.FunctionComponent = () => {
                     <LastActions />
                 </Card>
                 <Card
-                    width='100%'
+                    width='50%'
                     height={300}
-                    margin={{ left: 16, right: 0 }}
                     animationName="SlideInBottom"
                     duration="1.5s"
                     delay="1s"
