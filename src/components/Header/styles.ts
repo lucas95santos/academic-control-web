@@ -20,15 +20,6 @@ export const Nav = styled.nav`
             color: ${props => shade(0.3, props.theme.colors.default)};
         }
     }
-
-    & svg#menu-collapse {
-        font-size: 1.8rem;
-        margin-left: var(--gutter);
-
-        @media (min-width: 601px) {
-            display: none;
-        }
-    }
 `
 
 export const Brand = styled.div`
@@ -47,6 +38,22 @@ export const BrandTitle = styled.span`
 export const BrandImage = styled.img`
     width: 48px;
     object-fit: contain;
+`
+
+export const MenuCollapseButton = styled.button`
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+
+    > svg{
+        font-size: 1.8rem;
+
+        @media (min-width: 601px) {
+            display: none;
+        }
+    }
 `
 
 export const NavOptions = styled.div`

@@ -2,8 +2,9 @@ import React from 'react';
 import Switch from 'react-switch';
 // components
 import Brand from './Brand';
+import MenuCollapse from '../MenuCollapse';
 // styled components
-import { Nav, NavOptions, UserArea, UserInfo, UserAvatar } from './styles';
+import { Nav, NavOptions, UserArea, UserInfo, UserAvatar, MenuCollapseButton } from './styles';
 // theme
 import { ThemeContext } from 'styled-components';
 import { shade } from 'polished';
@@ -23,6 +24,13 @@ interface Props {
 interface SVGProps {
     icon: any;
     height: number;
+}
+
+interface Position {
+    initialX: number;
+    finalX: number;
+    initialY: number;
+    finalY: number;
 }
 
 const SVGIcon: React.FunctionComponent<SVGProps> = ({ icon, height }) => {
@@ -50,13 +58,16 @@ const SVGIcon: React.FunctionComponent<SVGProps> = ({ icon, height }) => {
 const Header: React.FunctionComponent<Props> = (props) => {
     const { toogleTheme } = props;
     const { colors, title } = React.useContext(ThemeContext);
+    const [menuOpen, setMenuOpen] = React.useState(false);
 
     return (
         <header>
             <Nav>
                 <Brand image={notebookSvg} title="Academic Control" />
 
-                <TiThMenu id="menu-collapse" />
+                <MenuCollapseButton id="menu-collapsed-button" onClick={() => setMenuOpen(!menuOpen)}>
+                    <TiThMenu />
+                </MenuCollapseButton>
 
                 <NavOptions>
                     <FaBell />
@@ -87,6 +98,11 @@ const Header: React.FunctionComponent<Props> = (props) => {
                     </span>
                 </NavOptions>
             </Nav>
+
+            <MenuCollapse
+                open={menuOpen}
+                toogleTheme={toogleTheme}
+            />
         </header>
     );
 }

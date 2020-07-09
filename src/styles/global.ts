@@ -5,6 +5,7 @@ export default createGlobalStyle`
         --primary-font: 'Poppins', sans-serif;
         --secondary-font: 'Montserrat', sans-serif;
         --gutter: 32px;
+        --card-box-shadow: 0 2px 3px 0 #00000029;
     }
 
     @media (max-width: 416px) {
@@ -27,6 +28,10 @@ export default createGlobalStyle`
         padding: 0 var(--gutter) var(--gutter);
         overflow-x: hidden;
         scroll-behavior: smooth;
+    }
+
+    header {
+        position: relative;
     }
 
     ::-webkit-scrollbar {
