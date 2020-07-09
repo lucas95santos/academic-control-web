@@ -1,0 +1,57 @@
+{
+    "classes": [
+        {
+            "id": 1,
+            "name": "Inteligência Artificial",
+            "initials": "ia",
+            "media": 6.0,
+            "evaluations": {
+                "p1": 5.7,
+                "p2": 10.0,
+                "po": 10.0,
+                "tp": 8.0,
+                "mf": 7.5
+            }
+        },
+        {
+            "id": 2,
+            "name": "Fundamentos de Redes de Computadores",
+            "initials": "fundred",
+            "media": 6.0,
+            "evaluations": {
+                "p1": 10.0,
+                "p2": 5.0,
+                "po": 10.0,
+                "tp": 8.0,
+                "mf": 9.1
+            }
+        },
+        {
+            "id": 3,
+            "name": "Introdução a Sistemas Operacionais",
+            "initials": "iso",
+            "media": 6.0,
+            "evaluations": {
+                "p1": 10.0,
+                "p2": 5.0,
+                "po": 10.0,
+                "tp": 8.0,
+                "a": 10.0,
+                "mf": 7.0
+            }
+        },
+        {
+            "id": 4,
+            "name": "Medição de Software",
+            "initials": "medsoft",
+            "media": 6.0,
+            "evaluations": {
+                "p1": 10.0,
+                "p2": 5.0,
+                "po": 10.0,
+                "tp": 8.0,
+                "mf": 8.0
+            }
+        }
+    ]
+}
