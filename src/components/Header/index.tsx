@@ -60,6 +60,14 @@ const Header: React.FunctionComponent<Props> = (props) => {
     const { colors, title } = React.useContext(ThemeContext);
     const [menuOpen, setMenuOpen] = React.useState(false);
 
+    React.useEffect(() => {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 601  && menuOpen) {
+                setMenuOpen(false);
+            }
+        });
+    }, [menuOpen]);
+
     return (
         <header>
             <Nav>
