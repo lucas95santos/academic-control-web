@@ -23,6 +23,7 @@ export const Container = styled.div`
     margin-top: 48px;
     display: flex;
     flex-direction: column;
+    padding: 0 var(--gutter) var(--gutter);
 `
 
 export const Section = styled.section`

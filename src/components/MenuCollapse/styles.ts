@@ -6,7 +6,6 @@ interface MenuCollapseItemProps {
 }
 
 export const MenuCollapseContainer = styled.div`
-    position: relative;
     width: 260px;
     display: flex;
     flex-direction: column;
@@ -16,7 +15,7 @@ export const MenuCollapseContainer = styled.div`
 
     position: absolute;
     top: 80px;
-    right: 0;
+    right: var(--gutter);
     z-index: 9999;
     transition: all linear 0.2s;
 `
