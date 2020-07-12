@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SignInContainer = styled.div`
+export const SignUpContainer = styled.div`
     width: 100%;
     height: 100vh;
     display: flex;
@@ -31,11 +31,15 @@ export const SignInContainer = styled.div`
     }
 `;
 
-export const SignInArea = styled.div`
-    min-width: 300px;
-    width: 25vw;
+export const SignUpArea = styled.div`
+    min-width: 500px;
+    width: 50vw;
     margin: 0 auto;
     padding: calc(var(--gutter) / 2);
+
+    @media (max-width: 415px) {
+        min-width: 300px;
+    }
 
     div.form-footer {
         display: flex;
@@ -63,31 +67,38 @@ export const SignInArea = styled.div`
     }
 `;
 
-export const SignInForm = styled.form`
+export const SignUpForm = styled.form`
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div.inline-inputs {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 415px) {
+            flex-direction: column;
+        }
+    }
 
     div.form-control {
+        width: 100%;
         margin-bottom: calc(var(--gutter) / 2);
     }
 
-    a {
-        display: inline-block;
-        margin-bottom: 16px;
-        font-family: var(--secondary-font);
-        font-weight: 400;
-        font-size: 0.875rem;
-        color: ${props => props.theme.colors.primary};
-        text-decoration: none;
-        transition: filter linear 0.2s;
+    div.form-control + div.form-control {
+        margin-left: 16px;
 
-        &:hover {
-            filter: brightness(85%);
+        @media (max-width: 415px) {
+            margin-left: 0;
         }
     }
 
     button {
-        margin-top: 16px;
+        margin-top: 32px;
         border: 0;
         outline: 0;
         font-family: var(--secondary-font);
@@ -96,6 +107,7 @@ export const SignInForm = styled.form`
         color: #ffffff;
         background-color: ${props => props.theme.colors.primary};
         width: 100%;
+        max-width: 350px;
         height: 45px;
         border-radius: 4px;
         box-shadow: 0 0 5px 2px #00000029;
