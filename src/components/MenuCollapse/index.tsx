@@ -21,7 +21,9 @@ import userSvg from '../../assets/user.svg';
 
 interface MenuCollapseProps {
     open: boolean;
+    setMenuOpen: Function;
     toogleTheme: any;
+    goTo: Function;
 }
 
 interface SVGProps {
@@ -64,8 +66,13 @@ const SVGIcon: React.FunctionComponent<SVGProps> = ({ icon, height }) => {
 }
 
 const MenuCollapse: React.FunctionComponent<MenuCollapseProps> = (props) => {
-    const { open, toogleTheme} = props;
+    const { open, setMenuOpen, toogleTheme, goTo } = props;
     const { colors, title } = React.useContext(ThemeContext);
+
+    const goToUserAccount = () => {
+        setMenuOpen(false);
+        goTo('conta');
+    }
 
     return (
         <MenuCollapseContainer
@@ -82,7 +89,7 @@ const MenuCollapse: React.FunctionComponent<MenuCollapseProps> = (props) => {
                 </UserInfo>
                 <UserAvatar src={userSvg} alt="Avatar" />
             </UserArea>
-            <MenuCollapseItem>
+            <MenuCollapseItem onClick={() => goToUserAccount()}>
                 <MdSettings />
                 <span>Configurações da conta</span>
             </MenuCollapseItem>

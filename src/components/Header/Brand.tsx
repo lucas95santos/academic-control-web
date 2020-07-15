@@ -5,15 +5,18 @@ import { Brand, BrandImage, BrandTitle } from './styles';
 interface Props {
     image: any;
     title: string;
+    goToDashboard: Function;
 }
 
-const BrandComponent: React.FunctionComponent<Props> = ({ image, title }) => {
-    function breakTitle(title: string) {
+const BrandComponent: React.FunctionComponent<Props> = (props) => {
+    const { image, title, goToDashboard } = props;
+
+    const breakTitle = (title: string) => {
         return title.split(' ');
     }
 
     return (
-        <Brand>
+        <Brand onClick={() => goToDashboard()} title="Ir para o dashboard">
             <BrandImage src={image} alt="Brand"/>
             <BrandTitle>
                 {breakTitle(title)[0]}<br/>

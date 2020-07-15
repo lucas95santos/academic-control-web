@@ -41,7 +41,7 @@ export default createGlobalStyle`
         color: ${props => props.theme.colors.lightText};
     }
 
-    input {
+    input, select {
         width: 100%;
         height: 40px;
         background-color: ${props => props.theme.colors.card};
@@ -59,6 +59,13 @@ export default createGlobalStyle`
         &:focus {
             border: 2px solid ${props => props.theme.colors.primary};
         }
+    }
+
+    select {
+        -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
+        -moz-appearance: none; /* Remove estilo padrão do FireFox */
+        appearance: none; /* Remove estilo padrão do FireFox*/
+        padding: 0 4px;
     }
 
     ::-webkit-scrollbar {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import Switch from 'react-switch';
 // components
 import Brand from './Brand';
@@ -60,6 +61,8 @@ const Header: React.FunctionComponent<Props> = (props) => {
     const { colors, title } = React.useContext(ThemeContext);
     const [menuOpen, setMenuOpen] = React.useState(false);
 
+    const history = useHistory();
+
     React.useEffect(() => {
         window.addEventListener('resize', () => {
             if (window.innerWidth >= 601  && menuOpen) {
@@ -68,10 +71,14 @@ const Header: React.FunctionComponent<Props> = (props) => {
         });
     }, [menuOpen]);
 
+    const goTo = (route: string) => {
+        history.push(`/${route}`);
+    }
+
     return (
         <header>
             <Nav>
-                <Brand image={notebookSvg} title="Academic Control" />
+                <Brand image={notebookSvg} title="Academic Control" goToDashboard={() => goTo('dashboard')} />
 
                 <MenuCollapseButton id="menu-collapsed-button" onClick={() => setMenuOpen(!menuOpen)}>
                     <TiThMenu />
@@ -80,7 +87,10 @@ const Header: React.FunctionComponent<Props> = (props) => {
                 <NavOptions>
                     <FaBell />
 
-                    <UserArea>
+                    <UserArea
+                        title="Ir para a configuração da conta"
+                        onClick={() => goTo('conta')}
+                    >
                         <UserInfo>
                             <span>John Doe</span>
                             <p>johndoe@gmail.com</p>
@@ -109,7 +119,9 @@ const Header: React.FunctionComponent<Props> = (props) => {
 
             <MenuCollapse
                 open={menuOpen}
+                setMenuOpen={setMenuOpen}
                 toogleTheme={toogleTheme}
+                goTo={goTo}
             />
         </header>
     );
