@@ -25,6 +25,11 @@ const UserAccount: React.FunctionComponent = () => {
         }
     }
 
+    const logout = () => {
+        localStorage.setItem('ac-signin', JSON.stringify(false));
+        document.location.reload(true);
+    }
+
     return (
         <UserAccountContainer>
             <UserAccountContent>
@@ -47,7 +52,7 @@ const UserAccount: React.FunctionComponent = () => {
                             Alterar senha
                             <BsShieldLock />
                         </li>
-                        <li>
+                        <li onClick={() => logout()}>
                             Sair
                             <MdPowerSettingsNew />
                         </li>

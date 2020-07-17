@@ -6,6 +6,11 @@ import { SignInContainer, SignInArea, SignInForm } from './styles';
 import logoSvg from '../../assets/notebook.svg';
 
 const SignIn: React.FunctionComponent = () => {
+    const login = () => {
+        localStorage.setItem('ac-signin', JSON.stringify(true));
+        document.location.reload(true);
+    }
+
     return (
         <SignInContainer>
             <div id="logo">
@@ -26,7 +31,7 @@ const SignIn: React.FunctionComponent = () => {
 
                     <Link to="/reset">Esqueci a senha</Link>
 
-                    <button>Entrar</button>
+                    <button onClick={() => login()}>Entrar</button>
                 </SignInForm>
                 <div className="form-footer">
                     <p>Não possui conta? <Link to="/cadastro">Crie uma por aqui</Link></p>
