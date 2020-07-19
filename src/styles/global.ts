@@ -49,7 +49,7 @@ export default createGlobalStyle`
         border-radius: 4px;
         outline: 0;
         padding: 16px 8px;
-        margin-top: 6px;
+        margin-top: 8px;
 
         font-size: 1rem;
         font-family: var(--secondary-font);
@@ -58,6 +58,31 @@ export default createGlobalStyle`
 
         &:focus {
             border: 2px solid ${props => props.theme.colors.primary};
+        }
+    }
+
+    textarea {
+        width: 100%;
+        height: 140px;
+        background-color: ${props => props.theme.colors.card};
+        border: 1px solid ${props => props.theme.colors.divider};
+        border-radius: 4px;
+        outline: 0;
+        padding: 8px;
+        margin-top: 6px;
+        resize: none;
+
+        font-size: 1rem;
+        font-family: var(--secondary-font);
+        color: ${props => props.theme.colors.text};
+        transition: border-color linear 0.33s;
+
+        &:focus {
+            border: 2px solid ${props => props.theme.colors.primary};
+        }
+
+        @media (max-width: 500px) {
+            height: 100px;
         }
     }
 

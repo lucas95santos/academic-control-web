@@ -18,13 +18,18 @@ interface CardMessageProps {
     color: string;
 }
 
+interface InputProps {
+    flex?: number;
+    marginLeft?: number;
+}
+
 export const Container = styled.div`
     width: 100%;
     margin-top: 48px;
     display: flex;
     flex-direction: column;
     padding: 0 var(--gutter) var(--gutter);
-`
+`;
 
 export const Section = styled.section`
     width: 100%;
@@ -56,7 +61,7 @@ export const Section = styled.section`
             flex-direction: column;
         }
     }
-`
+`;
 
 export const Card = styled(BaseAnimation)`
     position: relative;
@@ -93,7 +98,7 @@ export const Card = styled(BaseAnimation)`
             margin-top: ${props => !props.isClass ? 'var(--gutter)' : ''};
         }
     }
-`
+`;
 
 export const CardTitle = styled.span`
     font-family: var(--primary-font);
@@ -107,20 +112,20 @@ export const CardTitle = styled.span`
     &:hover {
         filter: brightness(80%);
     }
-`
+`;
 
 export const CardDivider = styled.div`
     width: 100%;
     height: 1px;
     margin-top: 4px;
     background: ${props => props.theme.colors.default};
-`
+`;
 
 export const CardContent = styled.div`
     width: 100%;
     margin-top: 16px;
     display: flex;
-`
+`;
 
 export const CardContentItem = styled.div`
     flex: 1;
@@ -141,7 +146,7 @@ export const CardContentItem = styled.div`
         text-transform: uppercase;
         margin-right: 8px;
     }
-`
+`;
 
 export const CardMessage = styled.div`
     position: absolute;
@@ -159,7 +164,7 @@ export const CardMessage = styled.div`
             font-size: 0.750rem;
         }
     }
-`
+`;
 
 export const CardInfo = styled.div`
     position: absolute;
@@ -173,7 +178,7 @@ export const CardInfo = styled.div`
         line-height: 0.6rem;
         color: ${props => props.theme.colors.lightText}
     }
-`
+`;
 
 export const AddClass = styled(BaseAnimation)`
     min-width: 160px;
@@ -202,4 +207,83 @@ export const AddClass = styled(BaseAnimation)`
     &:hover {
         filter: brightness(80%);
     }
-`
+`;
+
+export const InLine = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 415px) {
+        flex-direction: column;
+    }
+`;
+
+export const InputControl = styled.div`
+    width: 100%;
+    flex: ${(props: InputProps) => props.flex ? props.flex : 1};
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    margin-left: ${(props: InputProps) => props.marginLeft}px;
+
+    @media (max-width: 415px) {
+        margin-left: 0;
+    }
+`;
+
+export const CheckContainer = styled.div`
+    display: flex;
+    margin-top: 6px;
+    margin-bottom: 16px;
+
+    div {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        label {
+            margin-left: 8px;
+            font-weight: 500;
+        }
+
+        input[type=checkbox] {
+            all: unset;
+            position: relative;
+            display: inline-block;
+            border: 2px solid ${props => props.theme.colors.divider};
+            border-radius: 4px;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        input[type=checkbox]:checked {
+            border: 2px solid ${props => props.theme.colors.primary};
+        }
+
+        input[type=checkbox]:checked::after {
+            content: "✔";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: calc(50% - 9px);
+            left: calc(50% - 6px);
+            color: ${props => props.theme.colors.primary};
+        }
+    }
+
+    div + div {
+        margin-left: calc(var(--gutter) / 2);
+    }
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+
+        div + div {
+            margin-left: 0;
+            margin-top: calc(var(--gutter) / 2);
+        }
+    }
+`;

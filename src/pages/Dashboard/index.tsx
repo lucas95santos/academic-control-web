@@ -13,7 +13,10 @@ import {
     CardContentItem,
     CardMessage,
     CardInfo,
-    AddClass
+    AddClass,
+    InLine,
+    InputControl,
+    CheckContainer
 } from './styles';
 import { ThemeContext } from 'styled-components';
 // icons
@@ -39,7 +42,7 @@ interface Classe {
 const Dashboard: React.FunctionComponent = () => {
     const { colors } = React.useContext(ThemeContext);
     const [classes, setClasses] = React.useState<Classe[]>();
-    const [dialogOpen, setDialogOpen] = React.useState(false);
+    const [dialogOpen, setDialogOpen] = React.useState(true);
 
     React.useEffect(() => {
         api.get('classes').then(response => {
@@ -132,13 +135,64 @@ const Dashboard: React.FunctionComponent = () => {
             <Dialog
                 open={dialogOpen}
                 showDialog={setDialogOpen}
-                contentWidth={500}
+                contentWidth={700}
                 contentHeight={500}
                 title="Adicionar disciplina"
                 cancelButtonText="Cancelar"
                 successButtonText="Adicionar"
-                successButtonAction={() => {}}
-            />
+                successButtonAction={() => { }}
+            >
+                <form onSubmit={e => e.preventDefault()}>
+                    <InLine>
+                        <InputControl>
+                            <label htmlFor="class">Nome da disciplina</label>
+                            <input type="text" id="class" />
+                        </InputControl>
+
+                        <InputControl flex={0.5} marginLeft={16}>
+                            <label htmlFor="initials">Sigla da disciplina</label>
+                            <input type="text" id="initials" />
+                        </InputControl>
+                    </InLine>
+
+                    <label>Marque as avaliações que a disciplina terá</label>
+                    <CheckContainer>
+                        <div>
+                            <input type="checkbox" id="p1" />
+                            <label htmlFor="p1">Prova 1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="p2" />
+                            <label htmlFor="p2">Prova 2</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="po" />
+                            <label htmlFor="po">Prova Optativa</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="tp" />
+                            <label htmlFor="tp">Trabalho prático</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sem" />
+                            <label htmlFor="sem">Seminário</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="at" />
+                            <label htmlFor="at">Atividades</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="others" />
+                            <label htmlFor="others">Outras</label>
+                        </div>
+                    </CheckContainer>
+
+                    <InputControl>
+                        <label htmlFor="final_score">Informe o cálculo da média final</label>
+                        <textarea id="final_score" cols={30} rows={10} />
+                    </InputControl>
+                </form>
+            </Dialog>
         </>
     );
 }

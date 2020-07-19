@@ -37,11 +37,10 @@ export const DialogContent = styled.div`
 `;
 
 export const DialogHeader = styled.div`
-    border-bottom: 1px solid ${props => props.theme.colors.default};
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: calc(var(--gutter) / 2);
+    padding: 16px;
 
     span {
         font-family: var(--primary-font);
@@ -73,12 +72,11 @@ export const DialogHeader = styled.div`
 
 export const DialogBody = styled.div`
     flex: 1;
-    padding: calc(var(--gutter) / 2);
+    padding: 16px;
 `;
 
 export const DialogFooter = styled.div`
-    padding: calc(var(--gutter) / 2);
-    border-top: 1px solid ${props => props.theme.colors.default};
+    padding: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
