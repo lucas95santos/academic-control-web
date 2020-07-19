@@ -25,7 +25,7 @@ export const DialogContent = styled.div`
     min-height: max(${(props: DialogProps) => props.height}px, 400px);
     background-color: ${props => props.theme.colors.card};
     border-radius: 8px;
-    box-shadow: var(--card-box-shadow);
+    box-shadow: 0 0 10px 2px #00000020;
     display: flex;
     flex-direction: column;
 
