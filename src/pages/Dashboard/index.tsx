@@ -42,7 +42,7 @@ interface Classe {
 const Dashboard: React.FunctionComponent = () => {
     const { colors } = React.useContext(ThemeContext);
     const [classes, setClasses] = React.useState<Classe[]>();
-    const [dialogOpen, setDialogOpen] = React.useState(true);
+    const [dialogOpen, setDialogOpen] = React.useState(false);
 
     React.useEffect(() => {
         api.get('classes').then(response => {
