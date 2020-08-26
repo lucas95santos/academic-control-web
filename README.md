@@ -73,7 +73,7 @@
 
 <br />
 
-<a href="https://blog.rocketseat.com.br/author/thiago/">
+<a>
     <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/39750617?s=400&u=ca61b4156710f08ee055ca45a072666166b55b39&v=4" width="100px;" alt=""/>
     <br />
     <sub><strong>Lucas Santos</strong></sub>
