@@ -1,44 +1,90 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+    <img src="./src/assets/github/notebook.svg" height="150" width="175" alt="Academic Control" />
+</p>
 
-## Available Scripts
+<h1 align="center">Academic Control</h1>
 
-In the project directory, you can run:
+<h2 align="center">
+    A simple and efficient system for monitoring your academic grades 🗒️
+</h2>
 
-### `yarn start`
+<br />
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<div align="center">
+    <img src="https://img.shields.io/github/issues/lucas95santos/academic-control-web" />
+    <img src="https://img.shields.io/github/forks/lucas95santos/academic-control-web" />
+    <img src="https://img.shields.io/github/stars/lucas95santos/academic-control-web" />
+</div>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<br />
 
-### `yarn test`
+<div align="center">
+    <img style="width: 40%; height: 100%; object-fit: contain;" src="./src/assets/github/light_dashboard.png" height="150" width="175" alt="Academic Control" />
+    <img style="width: 40%; height: 100%; object-fit: contain;" src="./src/assets/github/dark_dashboard.png" height="150" width="175" alt="Academic Control" />
+</div>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br />
 
-### `yarn build`
+<p align="center">
+    <a href="#goal">Goal</a> •
+    <a href="#technologies">Technologies</a> •
+    <a href="#features">Features</a> •
+    <a href="#author">Author</a>
+</p>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br />
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<h2 id="goal">🎯️ Goal</h2>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br />
 
-### `yarn eject`
+<p>
+    The goal of Academic Control is to monitor each user's academic performance so that they can have control of their grades and have an easy view of their situation in each discipline.
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h2 id="features">💻️ Features</h2>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br />
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [ ] User registration
+- [ ] User authentication
+- [ ] Disciplines registration
+- [ ] Disciplines monitoring
+- [ ] Actions report
+- [ ] Performance graph
 
-## Learn More
+<br />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<h2 id="technologies">🛠 Technologies</h2>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br />
+
+<p>The following tools were used in the development of the project:</p>
+
+- [React](https://pt-br.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+
+<br />
+
+<h2 id="author">✏️️ Author</h2>
+
+<br />
+
+<a href="https://blog.rocketseat.com.br/author/thiago/">
+    <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/39750617?s=400&u=ca61b4156710f08ee055ca45a072666166b55b39&v=4" width="100px;" alt=""/>
+    <br />
+    <sub><strong>Lucas Santos</strong></sub>
+</a>
+
+<br />
+
+<p>Get in touch!</p>
+
+[![Linkedin Badge](https://img.shields.io/badge/-Lucas-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lucas95santos/)](https://www.linkedin.com/in/lucas95santos/)
+
+<h4 align="center">
+	🚧  Academic Control 🗒️ In development...  🚧
+</h4>
