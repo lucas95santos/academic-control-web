@@ -19,8 +19,8 @@
 <br />
 
 <div align="center">
-    <img style="width: 40%; height: 100%; object-fit: contain;" src="./src/assets/github/light_dashboard.png" height="150" width="175" alt="Academic Control" />
-    <img style="width: 40%; height: 100%; object-fit: contain;" src="./src/assets/github/dark_dashboard.png" height="150" width="175" alt="Academic Control" />
+    <img style="width: 45%; height: 100%; object-fit: contain;" src="./src/assets/github/light_dashboard.png" alt="Academic Control" />
+    <img style="width: 45%; height: 100%; object-fit: contain;" src="./src/assets/github/dark_dashboard.png" alt="Academic Control" />
 </div>
 
 <br />
